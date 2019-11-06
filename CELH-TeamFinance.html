@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<script src="STHSMain.js"></script>
+<title>CELH - Team Finance</title>
+<script src="CELH.js"></script>
+<meta name="author" content="Simon Tremblay, sths.simont.info" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Decription" content="Marcus Winston - STHS - Version : 3.1.9.9 - CELH-STHS.db - CELH-STHSCareerStat.db"/>
+<link href="STHSMain.css" rel="stylesheet" type="text/css" />
+<style>
+@media screen and (max-width: 960px) {.STHSWarning {display:block;}
+.STHSFinance_FarmSalaryTable {display:none;}
+.STHSFinance_TeamTable tr > td:nth-child(6){display:none;}
+.STHSFinance_TeamTable tr > td:nth-child(7){display:none;}
+.STHSFinance_TeamTable tr > td:nth-child(8){display:none;}}
+@media screen and (max-width: 720px) {.STHSFinance_ProSalaryTable{display:none}}
+</style>
+<link href="CELH.css" rel="stylesheet" type="text/css" />
+<link href="STHSMain-CSSOverwrite.css" rel="stylesheet" type="text/css" />
+<div class="tabsmenu standard"><ul class="tabmenu-links">
+<li><a class="tabmenuhome" href="./CELH-index.html">CELH Home</a></li>
+<li id="STHSMenu-Main"><a href="#tabmenu1">Main</a></li>
+<li id="STHSMenu-ProLeague"><a href="#tabmenu2">Pro League</a></li>
+<li id="STHSMenu-ProTeam" class="activemenu"><a href="#tabmenu3">Pro Team</a></li>
+<li id="STHSMenu-League"><a href="#tabmenu6">League</a></li>
+<li id="STHSMenu-Record"><a href="#tabmenu7">Records</a></li>
+<li id="STHSMenu-DirectLink"><a href="#tabmenu8">Team's Direct Link</a></li>
+</ul><div class="tab-contentmenu">
+<div class="tabmenu" id="tabmenu1">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH.stc">STHS Client League File</a></td>
+<td><a href="http://sths.simont.info/DownloadLatestClient.php">Latest STHS Client</a></td>
+<td><a href="CELH-ProTodayGames.html">Pro Today's Games</a></td>
+<td><a href="CELH-TodayTransactions.html">Today's Transactions</a></td>
+<td><a href="CELH-Schedule.html">Schedule </a></td>
+<td><a href="RSSFeed.xml">RSS Feed</a></td>
+<td class="STHSW1"></td></tr></table></div>
+<div class="tabmenu" id="tabmenu2">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-ProStanding.html">Standing</a></td>
+<td><a href="CELH-ProLeaders.html">Leader</a></td>
+<td><a href="CELH-ProIndividualLeaders.html">Individual Leaders</a></td>
+<td><a href="CELH-ProAllPlayersStats.html">All Players Stats</a></td>
+<td><a href="CELH-ProPowerRanking.html">Power Ranking</a></td>
+<td class="STHSW1"></td></tr></table></div>
+<div class="tabmenu active" id="tabmenu3">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-ProTeamRoster.html">Roster</a></td>
+<td><a href="CELH-ProTeamScoring.html">Scoring</a></td>
+<td><a href="CELH-ProTeamPlayersInfo.html">PlayersInfo</a></td>
+<td><a href="CELH-ProTeamLines.html">Lines</a></td>
+<td><a href="CELH-ProTeamSchedule.html">Schedule</a></td>
+<td><a href="CELH-ProTeamStats.html">Stats</a></td>
+<td><a href="CELH-ProTeamStatsVS.html">StatsVS</a></td>
+<td><a href="CELH-TeamFinance.html">Finance</a></td>
+<td><a href="CELH-TeamProspects.html">Future</a></td>
+<td><a href="CELH-TeamHistory.html">History</a></td>
+<td><a href="CELH-TeamInjurySuspension.html">Injury/Suspension</a></td>
+<td class="STHSW1"></td></tr></table></div>
+<div class="tabmenu" id="tabmenu6">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-Transactions.html">Transactions</a></td>
+<td><a href="CELH-Unassigned.html">Unassigned</a></td>
+<td><a href="CELH-FreeAgents.html">FreeAgents</a></td>
+<td><a href="CELH-TeamsAndGMInfo.html">Team/GM</a></td>
+<td><a href="CELH-TradeHistory.html">Trade History</a></td>
+<td><a href="CELH-RerateDifference.html">RerateDifference</a></td>
+<td class="STHSW1"></td></tr></table></div>
+<div class="tabmenu" id="tabmenu7">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-LeagueRecords.html">League Records</a></td>
+<td><a href="CELH-TeamRecords.html">Team Records</a></td>
+<td class="STHSW1"></td></tr></table></div>
+<div class="tabmenu" id="tabmenu8">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-ProTeamRoster.html#HCLionsBohemia">BOH</a></td>
+<td><a href="CELH-ProTeamRoster.html#HCLynxKladno">KLD</a></td>
+<td><a href="CELH-ProTeamRoster.html#HCEaglesMoravia">MOR</a></td>
+<td><a href="CELH-ProTeamRoster.html#HCBlackEaglesSilesia">SBE</a></td>
+</tr></table>
+</div></div></div><br />
+<table class="STHSTableFullW"><tr><td class="STHSHeaderTitle">Team Finance</td><td class="STHSHeaderDate">Last Update - Wednesday, November 6, 2019 at 11:42</td></tr>
+</table><div class="STHSWarning">Your browser screen resolution is too small for this page. Some information are hidden to keep the page readable.<br /></div>
+<div class="STHSTopLink"><a id="STHSRosterTop"></a> <a href="#HCBlackEaglesSilesia">HC Black Eagles Silesia</a> | <a href="#HCEaglesMoravia">HC Eagles Moravia</a> | <a href="#HCLionsBohemia">HC Lions Bohemia</a> | <a href="#HCLynxKladno">HC Lynx Kladno</a> | <a href="javascript:STHS_JS_CloseAll('');">Close All Team View</a> | <a href="javascript:STHS_JS_OpenAll('');">Open All Team View</a>
+</div>
+<h1 class="TeamFinancePro_SBE"><a id="HCBlackEaglesSilesia">HC Black Eagles Silesia</a></h1>
+<div class="STHSTeamLink">
+[ <a href="CELH-ProTeamRoster.html#HCBlackEaglesSilesia">Pro Team Roster</a> ]
+[ <a href="CELH-ProTeamScoring.html#HCBlackEaglesSilesia">Pro Team Scoring</a> ]
+[ <a href="CELH-TeamFinance.html#HCBlackEaglesSilesia">Team Finance</a> ]
+[ <a href="CELH-ProTeamPlayersInfo.html#HCBlackEaglesSilesia">Pro Team PlayersInfo</a> ]
+[ <a href="CELH-ProTeamLines.html#HCBlackEaglesSilesia">Pro Team Lines</a> ]
+[ <a href="CELH-TeamProspects.html#HCBlackEaglesSilesia">Team Prospects</a> ]
+[ <a href="CELH-ProTeamSchedule.html#HCBlackEaglesSilesia">Pro Team Schedule</a> ]
+[ <a href="CELH-ProTeamStats.html#HCBlackEaglesSilesia">Pro Team Stats</a> ]
+[ <a href="CELH-ProTeamStatsVS.html#HCBlackEaglesSilesia">Pro Team Stats VS</a> ]
+[ <a href="CELH-TeamInjurySuspension.html#HCBlackEaglesSilesia">Team Injury Suspension</a> ]
+[ <a href="CELH-TeamHistory.html#HCBlackEaglesSilesia">Team History</a> ]
+[ <a href="CELH-TeamRecords.html#HCBlackEaglesSilesia">Team Records</a> ]
+ [ <a href="#STHSRosterTop"><b>Page Top</b></a> ]
+[ <a href="javascript:STHS_JS_ToggleTeam('STHS_JS_Team_HCBlackEaglesSilesia');"><b>Close / Open Team View</b></a> ]
+</div><div id="STHS_JS_Team_HCBlackEaglesSilesia" style="display: block;">
+<br /><br /><table class="STHSTableFullW"><tr><td style="vertical-align: top;width:440px;">
+<table class="STHSFinance_TeamTable">
+<tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_AreanaCapacity">Arena Capacity - Ticket Price<br />Attendance - %</h3></td></tr>
+<tr><td class="STHSW250">Arena Name</td><td class="STHSW200">Ostravar Aréna</td></tr>
+<tr><td>Level 1: </td><td>6000 - $100 - 5,750 - 95.84%</td></tr>
+<tr><td>Level 2: </td><td>5000 - $60 - 4,633 - 92.66%</td></tr>
+<tr><td>Level 3: </td><td>2000 - $35 - 1,849 - 92.46%</td></tr>
+<tr><td>Level 4: </td><td>4000 - $25 - 3,729 - 93.23%</td></tr>
+<tr><td>Luxury : </td><td>1000 - $200 - 946 - 94.58%</td></tr>
+<tr><td>Total Capacity :</td><td>18000</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Income">Income</h3></td></tr>
+<tr><td>Home Games Left</td><td>0</td></tr>
+<tr><td>Average Attendance - %</td><td>16,907 - 93.93%</td></tr>
+<tr><td>Average Income per Game</td><td>$1,200,109</td></tr>
+<tr><td>Year to Date Revenue</td><td>$18,001,635</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Expense">Expense</h3></td></tr>
+<tr><td>Pro Players Total Salaries</td><td>$0</td></tr>
+<tr><td>Farm Players Total Salaries</td><td>$0</td></tr>
+<tr><td>Coaches Total Salaries</td><td>$0</td></tr>
+<tr><td>Luxury Taxe Total</td><td>$0</td></tr>
+<tr><td>Pro Year To Date Expenses</td><td>$0</td></tr>
+<tr><td>Farm Year To Date Expenses</td><td>$0</td></tr>
+<tr><td>Pro Salary Cap To Date</td><td>$0</td></tr>
+<tr><td>Farm Salary Cap To Date</td><td>$0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Estimate">Estimate</h3></td></tr>
+<tr><td>Pro Estimated Season Revenue</td><td>$0</td></tr>
+<tr><td>Pro Remaining Season Days</td><td>0</td></tr>
+<tr><td>Pro Expenses Per Days</td><td>$0</td></tr>
+<tr><td>Pro Estimated Expenses</td><td>$0</td></tr>
+<tr><td>Farm Remaining Season Days</td><td>0</td></tr>
+<tr><td>Farm Expenses Per Days</td><td>$0</td></tr>
+<tr><td>Farm Estimated Expenses</td><td>$0</td></tr>
+<tr><td>Estimated Season Expenses</td><td>$0</td></tr>
+<tr><td class="STHSCenter"><b>Current Bank Account</b></td><td>$143,696,060</td></tr>
+<tr><td class="STHSCenter"><b>Projected Bank Account</b></td><td>$143,696,060</td></tr></table>
+</td><td class="STHSFinance_ProSalaryTable">
+<table class="STHSFinance_TeamTable"><tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_ProPlayerSalaries">Pro Players Salaries</h3></td></tr>
+<tr><td>Mikas Bieksa</td>
+<td>$0 (1)</td></tr>
+<tr><td>Matej Elias</td>
+<td>$0 (1)</td></tr>
+<tr><td>Piotr Czerkawski</td>
+<td>$0 (1)</td></tr>
+<tr><td>Samee Iqbal</td>
+<td>$0 (1)</td></tr>
+<tr><td>Przemyslaw Brzeszczyczkiewicz</td>
+<td>$0 (1)</td></tr>
+<tr><td>Aron Hernadivic</td>
+<td>$0 (1)</td></tr>
+<tr><td>Alexander Zajac</td>
+<td>$0 (1)</td></tr>
+<tr><td>Charlie Schieck</td>
+<td>$0 (1)</td></tr>
+<tr><td>Josef Kubinec</td>
+<td>$0 (1)</td></tr>
+<tr><td>David Kastrba</td>
+<td>$0 (1)</td></tr>
+<tr><td>Simothy Drunkebird</td>
+<td>$0 (1)</td></tr>
+<tr><td>Krysztof Kowalski</td>
+<td>$0 (1)</td></tr>
+<tr><td>Vratislav Zbynek</td>
+<td>$0 (1)</td></tr>
+<tr><td>Casimir Stevens</td>
+<td>$0 (1)</td></tr>
+<tr><td>Mike Verminski</td>
+<td>$0 (1)</td></tr>
+<tr><td>Zalleras Szlerchek</td>
+<td>$0 (1)</td></tr>
+<tr><td>Tauras Karazija</td>
+<td>$0 (1)</td></tr>
+<tr><td>Flash Gordon</td>
+<td>$0 (1)</td></tr>
+<tr><td>Jakub Trocheck</td>
+<td>$0 (1)</td></tr>
+<tr><td>Jakub Novak</td>
+<td>$0 (1)</td></tr>
+<tr><td><b>Total Pro Players</b></td><td><b>20</b></td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Average Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Cap with 1 Way Contract</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+</table>
+</td><td class="STHSFinance_FarmSalaryTable">
+<table class="STHSFinance_TeamTable"><tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_FarmPlayerSalaries">Farm Players Salaries</h3></td></tr>
+<tr><td><b>Total Farm Players</b></td><td><b>0</b></td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Average Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+</table>
+</td></tr></table>
+</div>
+<h1 class="TeamFinancePro_MOR"><a id="HCEaglesMoravia">HC Eagles Moravia</a></h1>
+<div class="STHSTeamLink">
+[ <a href="CELH-ProTeamRoster.html#HCEaglesMoravia">Pro Team Roster</a> ]
+[ <a href="CELH-ProTeamScoring.html#HCEaglesMoravia">Pro Team Scoring</a> ]
+[ <a href="CELH-TeamFinance.html#HCEaglesMoravia">Team Finance</a> ]
+[ <a href="CELH-ProTeamPlayersInfo.html#HCEaglesMoravia">Pro Team PlayersInfo</a> ]
+[ <a href="CELH-ProTeamLines.html#HCEaglesMoravia">Pro Team Lines</a> ]
+[ <a href="CELH-TeamProspects.html#HCEaglesMoravia">Team Prospects</a> ]
+[ <a href="CELH-ProTeamSchedule.html#HCEaglesMoravia">Pro Team Schedule</a> ]
+[ <a href="CELH-ProTeamStats.html#HCEaglesMoravia">Pro Team Stats</a> ]
+[ <a href="CELH-ProTeamStatsVS.html#HCEaglesMoravia">Pro Team Stats VS</a> ]
+[ <a href="CELH-TeamInjurySuspension.html#HCEaglesMoravia">Team Injury Suspension</a> ]
+[ <a href="CELH-TeamHistory.html#HCEaglesMoravia">Team History</a> ]
+[ <a href="CELH-TeamRecords.html#HCEaglesMoravia">Team Records</a> ]
+ [ <a href="#STHSRosterTop"><b>Page Top</b></a> ]
+[ <a href="javascript:STHS_JS_ToggleTeam('STHS_JS_Team_HCEaglesMoravia');"><b>Close / Open Team View</b></a> ]
+</div><div id="STHS_JS_Team_HCEaglesMoravia" style="display: block;">
+<br /><br /><table class="STHSTableFullW"><tr><td style="vertical-align: top;width:440px;">
+<table class="STHSFinance_TeamTable">
+<tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_AreanaCapacity">Arena Capacity - Ticket Price<br />Attendance - %</h3></td></tr>
+<tr><td class="STHSW250">Arena Name</td><td class="STHSW200">DRFG Arena</td></tr>
+<tr><td>Level 1: </td><td>6000 - $100 - 5,695 - 94.91%</td></tr>
+<tr><td>Level 2: </td><td>5000 - $60 - 4,691 - 93.82%</td></tr>
+<tr><td>Level 3: </td><td>2000 - $35 - 1,900 - 94.99%</td></tr>
+<tr><td>Level 4: </td><td>4000 - $25 - 3,828 - 95.71%</td></tr>
+<tr><td>Luxury : </td><td>1000 - $200 - 943 - 94.31%</td></tr>
+<tr><td>Total Capacity :</td><td>18000</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Income">Income</h3></td></tr>
+<tr><td>Home Games Left</td><td>0</td></tr>
+<tr><td>Average Attendance - %</td><td>17,057 - 94.76%</td></tr>
+<tr><td>Average Income per Game</td><td>$1,201,765</td></tr>
+<tr><td>Year to Date Revenue</td><td>$18,026,475</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Expense">Expense</h3></td></tr>
+<tr><td>Pro Players Total Salaries</td><td>$0</td></tr>
+<tr><td>Farm Players Total Salaries</td><td>$0</td></tr>
+<tr><td>Coaches Total Salaries</td><td>$0</td></tr>
+<tr><td>Luxury Taxe Total</td><td>$0</td></tr>
+<tr><td>Pro Year To Date Expenses</td><td>$0</td></tr>
+<tr><td>Farm Year To Date Expenses</td><td>$0</td></tr>
+<tr><td>Pro Salary Cap To Date</td><td>$0</td></tr>
+<tr><td>Farm Salary Cap To Date</td><td>$0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Estimate">Estimate</h3></td></tr>
+<tr><td>Pro Estimated Season Revenue</td><td>$0</td></tr>
+<tr><td>Pro Remaining Season Days</td><td>0</td></tr>
+<tr><td>Pro Expenses Per Days</td><td>$0</td></tr>
+<tr><td>Pro Estimated Expenses</td><td>$0</td></tr>
+<tr><td>Farm Remaining Season Days</td><td>0</td></tr>
+<tr><td>Farm Expenses Per Days</td><td>$0</td></tr>
+<tr><td>Farm Estimated Expenses</td><td>$0</td></tr>
+<tr><td>Estimated Season Expenses</td><td>$0</td></tr>
+<tr><td class="STHSCenter"><b>Current Bank Account</b></td><td>$138,485,680</td></tr>
+<tr><td class="STHSCenter"><b>Projected Bank Account</b></td><td>$138,485,680</td></tr></table>
+</td><td class="STHSFinance_ProSalaryTable">
+<table class="STHSFinance_TeamTable"><tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_ProPlayerSalaries">Pro Players Salaries</h3></td></tr>
+<tr><td>Marian Potoczny</td>
+<td>$0 (1)</td></tr>
+<tr><td>Dionyz Vyskoc</td>
+<td>$0 (1)</td></tr>
+<tr><td>Nico Gross</td>
+<td>$0 (1)</td></tr>
+<tr><td>Slappy McDoodle</td>
+<td>$0 (1)</td></tr>
+<tr><td>Potato Chips</td>
+<td>$0 (1)</td></tr>
+<tr><td>Aviad Ratzon</td>
+<td>$0 (1)</td></tr>
+<tr><td>Andrej Doskocil</td>
+<td>$0 (1)</td></tr>
+<tr><td>Barak Obrana</td>
+<td>$0 (1)</td></tr>
+<tr><td>Brady McIntyre</td>
+<td>$0 (1)</td></tr>
+<tr><td>Boruvka Banananak</td>
+<td>$0 (1)</td></tr>
+<tr><td>Ondrej Ravchitikov</td>
+<td>$0 (1)</td></tr>
+<tr><td>Mikhail Kladno</td>
+<td>$0 (1)</td></tr>
+<tr><td>Sachimo Zoidberg</td>
+<td>$0 (1)</td></tr>
+<tr><td>Christoffer Bjornsson</td>
+<td>$0 (1)</td></tr>
+<tr><td>Ben Holtby</td>
+<td>$0 (1)</td></tr>
+<tr><td>Zivan Zidek</td>
+<td>$0 (1)</td></tr>
+<tr><td>Ty Justice</td>
+<td>$0 (1)</td></tr>
+<tr><td>Sasha Dangelchek</td>
+<td>$0 (1)</td></tr>
+<tr><td>Daniel Garland</td>
+<td>$0 (1)</td></tr>
+<tr><td>Marek Vyskoc</td>
+<td>$0 (1)</td></tr>
+<tr><td><b>Total Pro Players</b></td><td><b>20</b></td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Average Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Cap with 1 Way Contract</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+</table>
+</td><td class="STHSFinance_FarmSalaryTable">
+<table class="STHSFinance_TeamTable"><tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_FarmPlayerSalaries">Farm Players Salaries</h3></td></tr>
+<tr><td><b>Total Farm Players</b></td><td><b>0</b></td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Average Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+</table>
+</td></tr></table>
+</div>
+<h1 class="TeamFinancePro_BOH"><a id="HCLionsBohemia">HC Lions Bohemia</a></h1>
+<div class="STHSTeamLink">
+[ <a href="CELH-ProTeamRoster.html#HCLionsBohemia">Pro Team Roster</a> ]
+[ <a href="CELH-ProTeamScoring.html#HCLionsBohemia">Pro Team Scoring</a> ]
+[ <a href="CELH-TeamFinance.html#HCLionsBohemia">Team Finance</a> ]
+[ <a href="CELH-ProTeamPlayersInfo.html#HCLionsBohemia">Pro Team PlayersInfo</a> ]
+[ <a href="CELH-ProTeamLines.html#HCLionsBohemia">Pro Team Lines</a> ]
+[ <a href="CELH-TeamProspects.html#HCLionsBohemia">Team Prospects</a> ]
+[ <a href="CELH-ProTeamSchedule.html#HCLionsBohemia">Pro Team Schedule</a> ]
+[ <a href="CELH-ProTeamStats.html#HCLionsBohemia">Pro Team Stats</a> ]
+[ <a href="CELH-ProTeamStatsVS.html#HCLionsBohemia">Pro Team Stats VS</a> ]
+[ <a href="CELH-TeamInjurySuspension.html#HCLionsBohemia">Team Injury Suspension</a> ]
+[ <a href="CELH-TeamHistory.html#HCLionsBohemia">Team History</a> ]
+[ <a href="CELH-TeamRecords.html#HCLionsBohemia">Team Records</a> ]
+ [ <a href="#STHSRosterTop"><b>Page Top</b></a> ]
+[ <a href="javascript:STHS_JS_ToggleTeam('STHS_JS_Team_HCLionsBohemia');"><b>Close / Open Team View</b></a> ]
+</div><div id="STHS_JS_Team_HCLionsBohemia" style="display: block;">
+<br /><br /><table class="STHSTableFullW"><tr><td style="vertical-align: top;width:440px;">
+<table class="STHSFinance_TeamTable">
+<tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_AreanaCapacity">Arena Capacity - Ticket Price<br />Attendance - %</h3></td></tr>
+<tr><td class="STHSW250">Arena Name</td><td class="STHSW200">O2 Arena</td></tr>
+<tr><td>Level 1: </td><td>6000 - $100 - 5,563 - 92.72%</td></tr>
+<tr><td>Level 2: </td><td>5000 - $60 - 4,696 - 93.92%</td></tr>
+<tr><td>Level 3: </td><td>2000 - $35 - 1,866 - 93.30%</td></tr>
+<tr><td>Level 4: </td><td>4000 - $25 - 3,764 - 94.09%</td></tr>
+<tr><td>Luxury : </td><td>1000 - $200 - 945 - 94.46%</td></tr>
+<tr><td>Total Capacity :</td><td>18000</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Income">Income</h3></td></tr>
+<tr><td>Home Games Left</td><td>0</td></tr>
+<tr><td>Average Attendance - %</td><td>16,834 - 93.52%</td></tr>
+<tr><td>Average Income per Game</td><td>$1,186,420</td></tr>
+<tr><td>Year to Date Revenue</td><td>$17,796,305</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Expense">Expense</h3></td></tr>
+<tr><td>Pro Players Total Salaries</td><td>$0</td></tr>
+<tr><td>Farm Players Total Salaries</td><td>$0</td></tr>
+<tr><td>Coaches Total Salaries</td><td>$0</td></tr>
+<tr><td>Luxury Taxe Total</td><td>$0</td></tr>
+<tr><td>Pro Year To Date Expenses</td><td>$0</td></tr>
+<tr><td>Farm Year To Date Expenses</td><td>$0</td></tr>
+<tr><td>Pro Salary Cap To Date</td><td>$0</td></tr>
+<tr><td>Farm Salary Cap To Date</td><td>$0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Estimate">Estimate</h3></td></tr>
+<tr><td>Pro Estimated Season Revenue</td><td>$0</td></tr>
+<tr><td>Pro Remaining Season Days</td><td>0</td></tr>
+<tr><td>Pro Expenses Per Days</td><td>$0</td></tr>
+<tr><td>Pro Estimated Expenses</td><td>$0</td></tr>
+<tr><td>Farm Remaining Season Days</td><td>0</td></tr>
+<tr><td>Farm Expenses Per Days</td><td>$0</td></tr>
+<tr><td>Farm Estimated Expenses</td><td>$0</td></tr>
+<tr><td>Estimated Season Expenses</td><td>$0</td></tr>
+<tr><td class="STHSCenter"><b>Current Bank Account</b></td><td>$143,512,550</td></tr>
+<tr><td class="STHSCenter"><b>Projected Bank Account</b></td><td>$143,512,550</td></tr></table>
+</td><td class="STHSFinance_ProSalaryTable">
+<table class="STHSFinance_TeamTable"><tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_ProPlayerSalaries">Pro Players Salaries</h3></td></tr>
+<tr><td>Petr Mikulak</td>
+<td>$0 (1)</td></tr>
+<tr><td>Luke Thomason</td>
+<td>$0 (1)</td></tr>
+<tr><td>Pierre-Luc Laflamme</td>
+<td>$0 (1)</td></tr>
+<tr><td>Soren Kierkegaard</td>
+<td>$0 (1)</td></tr>
+<tr><td>Sean Stevenson Jr.</td>
+<td>$0 (1)</td></tr>
+<tr><td>Cameron Urbowicz</td>
+<td>$0 (1)</td></tr>
+<tr><td>Bernik Vrzala</td>
+<td>$0 (1)</td></tr>
+<tr><td>David Vent</td>
+<td>$0 (1)</td></tr>
+<tr><td>Jan Zacha</td>
+<td>$0 (1)</td></tr>
+<tr><td>DeMaricus Smyth</td>
+<td>$0 (1)</td></tr>
+<tr><td>Matej Stransky</td>
+<td>$0 (1)</td></tr>
+<tr><td>Konstantin Voloshin</td>
+<td>$0 (1)</td></tr>
+<tr><td>Ruslan Zaporozhets</td>
+<td>$0 (1)</td></tr>
+<tr><td>Johnny Yuma</td>
+<td>$0 (1)</td></tr>
+<tr><td>Chris Partridge</td>
+<td>$0 (1)</td></tr>
+<tr><td>Travis Jeziak</td>
+<td>$0 (1)</td></tr>
+<tr><td>Tokek Takshak</td>
+<td>$0 (1)</td></tr>
+<tr><td>Walter White</td>
+<td>$0 (1)</td></tr>
+<tr><td>Petr Kolesnikovs</td>
+<td>$0 (1)</td></tr>
+<tr><td>Dickie Pecker</td>
+<td>$0 (1)</td></tr>
+<tr><td><b>Total Pro Players</b></td><td><b>20</b></td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Average Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Cap with 1 Way Contract</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+</table>
+</td><td class="STHSFinance_FarmSalaryTable">
+<table class="STHSFinance_TeamTable"><tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_FarmPlayerSalaries">Farm Players Salaries</h3></td></tr>
+<tr><td><b>Total Farm Players</b></td><td><b>0</b></td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Average Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+</table>
+</td></tr></table>
+</div>
+<h1 class="TeamFinancePro_KLD"><a id="HCLynxKladno">HC Lynx Kladno</a></h1>
+<div class="STHSTeamLink">
+[ <a href="CELH-ProTeamRoster.html#HCLynxKladno">Pro Team Roster</a> ]
+[ <a href="CELH-ProTeamScoring.html#HCLynxKladno">Pro Team Scoring</a> ]
+[ <a href="CELH-TeamFinance.html#HCLynxKladno">Team Finance</a> ]
+[ <a href="CELH-ProTeamPlayersInfo.html#HCLynxKladno">Pro Team PlayersInfo</a> ]
+[ <a href="CELH-ProTeamLines.html#HCLynxKladno">Pro Team Lines</a> ]
+[ <a href="CELH-TeamProspects.html#HCLynxKladno">Team Prospects</a> ]
+[ <a href="CELH-ProTeamSchedule.html#HCLynxKladno">Pro Team Schedule</a> ]
+[ <a href="CELH-ProTeamStats.html#HCLynxKladno">Pro Team Stats</a> ]
+[ <a href="CELH-ProTeamStatsVS.html#HCLynxKladno">Pro Team Stats VS</a> ]
+[ <a href="CELH-TeamInjurySuspension.html#HCLynxKladno">Team Injury Suspension</a> ]
+[ <a href="CELH-TeamHistory.html#HCLynxKladno">Team History</a> ]
+[ <a href="CELH-TeamRecords.html#HCLynxKladno">Team Records</a> ]
+ [ <a href="#STHSRosterTop"><b>Page Top</b></a> ]
+[ <a href="javascript:STHS_JS_ToggleTeam('STHS_JS_Team_HCLynxKladno');"><b>Close / Open Team View</b></a> ]
+</div><div id="STHS_JS_Team_HCLynxKladno" style="display: block;">
+<br /><br /><table class="STHSTableFullW"><tr><td style="vertical-align: top;width:440px;">
+<table class="STHSFinance_TeamTable">
+<tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_AreanaCapacity">Arena Capacity - Ticket Price<br />Attendance - %</h3></td></tr>
+<tr><td class="STHSW250">Arena Name</td><td class="STHSW200">Zimní Stadion</td></tr>
+<tr><td>Level 1: </td><td>6000 - $100 - 5,596 - 93.27%</td></tr>
+<tr><td>Level 2: </td><td>5000 - $60 - 4,679 - 93.57%</td></tr>
+<tr><td>Level 3: </td><td>2000 - $35 - 1,879 - 93.95%</td></tr>
+<tr><td>Level 4: </td><td>4000 - $25 - 3,805 - 95.13%</td></tr>
+<tr><td>Luxury : </td><td>1000 - $200 - 954 - 95.35%</td></tr>
+<tr><td>Total Capacity :</td><td>18000</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Income">Income</h3></td></tr>
+<tr><td>Home Games Left</td><td>0</td></tr>
+<tr><td>Average Attendance - %</td><td>16,913 - 93.96%</td></tr>
+<tr><td>Average Income per Game</td><td>$1,191,943</td></tr>
+<tr><td>Year to Date Revenue</td><td>$17,879,145</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Expense">Expense</h3></td></tr>
+<tr><td>Pro Players Total Salaries</td><td>$0</td></tr>
+<tr><td>Farm Players Total Salaries</td><td>$0</td></tr>
+<tr><td>Coaches Total Salaries</td><td>$0</td></tr>
+<tr><td>Luxury Taxe Total</td><td>$0</td></tr>
+<tr><td>Pro Year To Date Expenses</td><td>$0</td></tr>
+<tr><td>Farm Year To Date Expenses</td><td>$0</td></tr>
+<tr><td>Pro Salary Cap To Date</td><td>$0</td></tr>
+<tr><td>Farm Salary Cap To Date</td><td>$0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><br /><h3 class="STHSTeamFinance_Estimate">Estimate</h3></td></tr>
+<tr><td>Pro Estimated Season Revenue</td><td>$0</td></tr>
+<tr><td>Pro Remaining Season Days</td><td>0</td></tr>
+<tr><td>Pro Expenses Per Days</td><td>$0</td></tr>
+<tr><td>Pro Estimated Expenses</td><td>$0</td></tr>
+<tr><td>Farm Remaining Season Days</td><td>0</td></tr>
+<tr><td>Farm Expenses Per Days</td><td>$0</td></tr>
+<tr><td>Farm Estimated Expenses</td><td>$0</td></tr>
+<tr><td>Estimated Season Expenses</td><td>$0</td></tr>
+<tr><td class="STHSCenter"><b>Current Bank Account</b></td><td>$138,502,665</td></tr>
+<tr><td class="STHSCenter"><b>Projected Bank Account</b></td><td>$138,502,665</td></tr></table>
+</td><td class="STHSFinance_ProSalaryTable">
+<table class="STHSFinance_TeamTable"><tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_ProPlayerSalaries">Pro Players Salaries</h3></td></tr>
+<tr><td>Michael Scarn</td>
+<td>$0 (1)</td></tr>
+<tr><td>Kornel Kasparek</td>
+<td>$0 (1)</td></tr>
+<tr><td>Noctis Caelum</td>
+<td>$0 (1)</td></tr>
+<tr><td>Ravyn Tedisko</td>
+<td>$0 (1)</td></tr>
+<tr><td>Radovan Hudec</td>
+<td>$0 (1)</td></tr>
+<tr><td>Barret McCarthy</td>
+<td>$0 (1)</td></tr>
+<tr><td>Alex Winters</td>
+<td>$0 (1)</td></tr>
+<tr><td>Filip Zadina</td>
+<td>$0 (1)</td></tr>
+<tr><td>Josef Novotny</td>
+<td>$0 (1)</td></tr>
+<tr><td>Jakob Hamr</td>
+<td>$0 (1)</td></tr>
+<tr><td>Patrik Satan</td>
+<td>$0 (1)</td></tr>
+<tr><td>Merit Csonka</td>
+<td>$0 (1)</td></tr>
+<tr><td>Tomas Pylon</td>
+<td>$0 (1)</td></tr>
+<tr><td>Knox Booth</td>
+<td>$0 (1)</td></tr>
+<tr><td>Georgette Pel</td>
+<td>$0 (1)</td></tr>
+<tr><td>Shouta Aizawa</td>
+<td>$0 (1)</td></tr>
+<tr><td>Schnitinfritz Jagr</td>
+<td>$0 (1)</td></tr>
+<tr><td>Troy McClure III</td>
+<td>$0 (1)</td></tr>
+<tr><td>Grayson St. Raegan</td>
+<td>$0 (1)</td></tr>
+<tr><td>Cash Savage</td>
+<td>$0 (1)</td></tr>
+<tr><td><b>Total Pro Players</b></td><td><b>20</b></td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Average Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Cap with 1 Way Contract</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+</table>
+</td><td class="STHSFinance_FarmSalaryTable">
+<table class="STHSFinance_TeamTable"><tr><td colspan="2" class="STHSCenter"><h3 class="STHSTeamFinance_FarmPlayerSalaries">Farm Players Salaries</h3></td></tr>
+<tr><td><b>Total Farm Players</b></td><td><b>0</b></td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+<tr><td colspan="2" class="STHSCenter"><b>Salary Average Commitment</b></td></tr>
+<tr><td colspan="2"><b>Year 2 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 3 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 4 :</b> $0</td></tr>
+<tr><td colspan="2"><b>Year 5 :</b> $0</td></tr>
+</table>
+</td></tr></table>
+</div>
+<br /><br /><br /><a href="#" class="scrollup">Back to the Top</a><div class="footer">
+Output by the <a href="http://sths.simont.info">SimonT Hockey Simulator (STHS)</a> for Marcus Winston<span class="FooterW3C"> - Original Page <a href="http://validator.w3.org/check?uri=referer">W3C HTML5 Valid</a></span>
+<div style="display:none;visibility:hidden"><a href="http://sths.simont.info">Hockey Simulator</a> - <a href="http://sths.simont.info">Hockey Simulation</a> - <a href="http://sths.simont.info">Hockey Manager</a></div></div>
+</body></html>
