@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<script src="STHSMain.js"></script>
+<title>CELH - Pro Team Roster</title>
+<script src="CELH-PLF.js"></script>
+<meta name="author" content="Simon Tremblay, sths.simont.info" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Decription" content="Marcus Winston - STHS - Version : 3.2.0.0 - CELH-STHS.db - CELH-STHSCareerStat.db"/>
+<link href="STHSMain.css" rel="stylesheet" type="text/css" />
+<style>
+@media screen and (max-width: 992px) {
+.STHSRoster_GoaliesTable tbody td:nth-child(2){display:none;}
+.STHSRoster_GoaliesTable thead th:nth-child(2){display:none;}
+.STHSRoster_PlayersTable tbody td:nth-child(1){display:none;}
+.STHSRoster_PlayersTable thead th:nth-child(1){display:none;}
+.STHSRoster_PlayersTable tbody td:nth-child(3){display:none;}
+.STHSRoster_PlayersTable thead th:nth-child(3){display:none;}
+.STHSRoster_PlayersTable tbody td:nth-child(4){display:none;}
+.STHSRoster_PlayersTable thead th:nth-child(4){display:none;}
+.STHSRoster_PlayersTable tbody td:nth-child(5){display:none;}
+.STHSRoster_PlayersTable thead th:nth-child(5){display:none;}
+.STHSRoster_PlayersTable tbody td:nth-child(6){display:none;}
+.STHSRoster_PlayersTable thead th:nth-child(6){display:none;}
+.STHSRoster_Coach{display:none;}
+.STHSRoster_TeamOverall{display:none;}
+}
+@media screen and (max-width: 1200px) {
+.STHSWarning {display:block;}
+table.basictablesorter tbody td:nth-last-child(1){display:none;}
+table.basictablesorter thead th:nth-last-child(1){display:none;}
+table.basictablesorter tbody td:nth-last-child(2){display:none;}
+table.basictablesorter thead th:nth-last-child(2){display:none;}
+table.basictablesorter tbody td:nth-last-child(3){display:none;}
+table.basictablesorter thead th:nth-last-child(3){display:none;}
+table.basictablesorter tbody td:nth-last-child(4){display:none;}
+table.basictablesorter thead th:nth-last-child(4){display:none;}
+table.basictablesorter tbody td:nth-last-child(5){display:none;}
+table.basictablesorter thead th:nth-last-child(5){display:none;}
+table.basictablesorter tbody td:nth-last-child(6){display:none;}
+table.basictablesorter thead th:nth-last-child(6){display:none;}
+}</style>
+<link href="CELH-PLF.css" rel="stylesheet" type="text/css" />
+<link href="STHSMain-CSSOverwrite.css" rel="stylesheet" type="text/css" />
+<div class="tabsmenu standard"><ul class="tabmenu-links">
+<li><a class="tabmenuhome" href="./index.html">CELH-PLF Home</a></li>
+<li id="STHSMenu-Main"><a href="#tabmenu1">Main</a></li>
+<li id="STHSMenu-ProLeague"><a href="#tabmenu2">Pro League</a></li>
+<li id="STHSMenu-ProTeam" class="activemenu"><a href="#tabmenu3">Pro Team</a></li>
+<li id="STHSMenu-League"><a href="#tabmenu6">League</a></li>
+<li id="STHSMenu-Record"><a href="#tabmenu7">Records</a></li>
+<li id="STHSMenu-DirectLink"><a href="#tabmenu8">Team's Direct Link</a></li>
+</ul><div class="tab-contentmenu">
+<div class="tabmenu" id="tabmenu1">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-PLF.stc">STHS Client League File</a></td>
+<td><a href="http://sths.simont.info/DownloadLatestClient.php">Latest STHS Client</a></td>
+<td><a href="CELH-PLF-ProTodayGames.html">Pro Today's Games</a></td>
+<td><a href="CELH-PLF-TodayTransactions.html">Today's Transactions</a></td>
+<td><a href="CELH-PLF-Schedule.html">Schedule </a></td>
+<td><a href="RSSFeed.xml">RSS Feed</a></td>
+<td class="STHSW1"></td></tr></table></div>
+<div class="tabmenu" id="tabmenu2">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-PLF-ProStanding.html">Standing</a></td>
+<td><a href="CELH-PLF-ProLeaders.html">Leader</a></td>
+<td><a href="CELH-PLF-ProIndividualLeaders.html">Individual Leaders</a></td>
+<td><a href="CELH-PLF-ProAllPlayersStats.html">All Players Stats</a></td>
+<td><a href="CELH-PLF-ProPowerRanking.html">Power Ranking</a></td>
+<td class="STHSW1"></td></tr></table></div>
+<div class="tabmenu active" id="tabmenu3">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-PLF-ProTeamRoster.html">Roster</a></td>
+<td><a href="CELH-PLF-ProTeamScoring.html">Scoring</a></td>
+<td><a href="CELH-PLF-ProTeamPlayersInfo.html">PlayersInfo</a></td>
+<td><a href="CELH-PLF-ProTeamLines.html">Lines</a></td>
+<td><a href="CELH-PLF-ProTeamSchedule.html">Schedule</a></td>
+<td><a href="CELH-PLF-ProTeamStats.html">Stats</a></td>
+<td><a href="CELH-PLF-ProTeamStatsVS.html">StatsVS</a></td>
+<td><a href="CELH-PLF-TeamProspects.html">Future</a></td>
+<td><a href="CELH-PLF-TeamHistory.html">History</a></td>
+<td><a href="CELH-PLF-TeamInjurySuspension.html">Injury/Suspension</a></td>
+<td class="STHSW1"></td></tr></table></div>
+<div class="tabmenu" id="tabmenu6">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-PLF-Transactions.html">Transactions</a></td>
+<td><a href="CELH-PLF-Unassigned.html">Unassigned</a></td>
+<td><a href="CELH-PLF-FreeAgents.html">FreeAgents</a></td>
+<td><a href="CELH-PLF-TeamsAndGMInfo.html">Team/GM</a></td>
+<td><a href="CELH-PLF-RerateDifference.html">RerateDifference</a></td>
+<td class="STHSW1"></td></tr></table></div>
+<div class="tabmenu" id="tabmenu7">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-PLF-LeagueRecords.html">League Records</a></td>
+<td><a href="CELH-PLF-TeamRecords.html">Team Records</a></td>
+<td class="STHSW1"></td></tr></table></div>
+<div class="tabmenu" id="tabmenu8">
+<table class="MenuSTHS"><tr>
+<td><a href="CELH-PLF-ProTeamRoster.html#HCLionsBohemia">BOH</a></td>
+<td><a href="CELH-PLF-ProTeamRoster.html#HCLynxKladno">KLD</a></td>
+<td><a href="CELH-PLF-ProTeamRoster.html#HCEaglesMoravia">MOR</a></td>
+<td><a href="CELH-PLF-ProTeamRoster.html#HCBlackEaglesSilesia">SBE</a></td>
+</tr></table>
+</div></div></div><br />
+<table class="STHSTableFullW"><tr><td class="STHSHeaderTitle">Pro Team Roster</td><td class="STHSHeaderDate">Last Update - Saturday, November 23, 2019 at 19:16</td></tr>
+</table><div class="STHSWarning">Your browser screen resolution is too small for this page. Some information are hidden to keep the page readable.<br /></div>
+<script>jQuery(function($,undefined) {$.basictablesorter.addParser({id: 'thousands',is: function(s) {return false;}, format: function(s) { return s.replace('$','').replace(/,/g,'');}, type: 'numeric' }); 
+$(".STHSRoster_PlayersTable").basictablesorter({headers:{30:{sorter:'thousands'}}});
+$(".STHSRoster_GoaliesTable").basictablesorter({headers:{24:{sorter:'thousands'}}});});</script>
+<div class="STHSTopLink"><a id="STHSRosterTop"></a> <a href="#HCBlackEaglesSilesia">HC Black Eagles Silesia</a> | <a href="#HCEaglesMoravia">HC Eagles Moravia</a> | <a href="#HCLionsBohemia">HC Lions Bohemia</a> | <a href="#HCLynxKladno">HC Lynx Kladno</a> | <a href="javascript:STHS_JS_CloseAll('');">Close All Team View</a> | <a href="javascript:STHS_JS_OpenAll('');">Open All Team View</a>
+</div>
+<h1 class="TeamRosterPro_SBE"><a id="HCBlackEaglesSilesia">HC Black Eagles Silesia</a></h1>
+<div class="STHSTeamLink">
+[ <a href="CELH-PLF-ProTeamRoster.html#HCBlackEaglesSilesia">Pro Team Roster</a> ]
+[ <a href="CELH-PLF-ProTeamScoring.html#HCBlackEaglesSilesia">Pro Team Scoring</a> ]
+[ <a href="CELH-PLF-ProTeamPlayersInfo.html#HCBlackEaglesSilesia">Pro Team PlayersInfo</a> ]
+[ <a href="CELH-PLF-ProTeamLines.html#HCBlackEaglesSilesia">Pro Team Lines</a> ]
+[ <a href="CELH-PLF-TeamProspects.html#HCBlackEaglesSilesia">Team Prospects</a> ]
+[ <a href="CELH-PLF-ProTeamSchedule.html#HCBlackEaglesSilesia">Pro Team Schedule</a> ]
+[ <a href="CELH-PLF-ProTeamStats.html#HCBlackEaglesSilesia">Pro Team Stats</a> ]
+[ <a href="CELH-PLF-ProTeamStatsVS.html#HCBlackEaglesSilesia">Pro Team Stats VS</a> ]
+[ <a href="CELH-PLF-TeamInjurySuspension.html#HCBlackEaglesSilesia">Team Injury Suspension</a> ]
+[ <a href="CELH-PLF-TeamHistory.html#HCBlackEaglesSilesia">Team History</a> ]
+[ <a href="CELH-PLF-TeamRecords.html#HCBlackEaglesSilesia">Team Records</a> ]
+ [ <a href="#STHSRosterTop"><b>Page Top</b></a> ]
+[ <a href="javascript:STHS_JS_ToggleTeam('STHS_JS_Team_HCBlackEaglesSilesia');"><b>Close / Open Team View</b></a> ]
+</div><div id="STHS_JS_Team_HCBlackEaglesSilesia" style="display: block;">
+<br /><table class="STHSTableFullW"><tr>
+<td class="STHSRoster_GM">General Manager : </td>
+<td class="STHSRoster_Coach">Coach : </td>
+<td class="STHSW120"><b>Morale</b> : 40</td>
+<td class="STHSRoster_TeamOverall">Team Overall : 72</td></tr></table>
+<table class="basictablesorter STHSRoster_PlayersTable"><thead><tr>
+<th class="STHSW25">#</th><th class="STHSW200">Player Name</th><th class="STHSW10">C</th><th class="STHSW10">L</th><th class="STHSW10">R</th><th class="STHSW10">D</th><th class="STHSW25">CON</th><th class="STHSW25">IJ</th><th class="STHSW25">CK</th><th class="STHSW25">FG</th><th class="STHSW25">DI</th><th class="STHSW25">SK</th><th class="STHSW25">ST</th><th class="STHSW25">EN</th><th class="STHSW25">DU</th><th class="STHSW25">PH</th><th class="STHSW25">FO</th><th class="STHSW25">PA</th><th class="STHSW25">SC</th><th class="STHSW25">DF</th><th class="STHSW25">PS</th><th class="STHSW25">EX</th><th class="STHSW25">LD</th><th class="STHSW25">PO</th><th class="STHSW25">MO</th><th class="STHSW25">OV</th><th class="STHSW25">TA</th><th class="STHSW25">SP</th><th class="STHSW25">Age</th><th class="STHSW25">Contract</th><th class="STHSW100">Salary</th><th class="STHSW55">Link</th></tr></thead>
+<tr><td>1</td><td>Zalleras Szlerchek(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>70</td><td>38</td><td>70</td><td>99</td><td>90</td><td>90</td><td>50</td><td>90</td><td>90</td><td>99</td><td>90</td><td>99</td><td>43</td><td>80</td><td>50</td><td>80</td><td>40</td><td>82</td><td></td><td>0</td><td>41</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>2</td><td>Krysztof Kowalski(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>84</td><td>80</td><td>84</td><td>50</td><td>80</td><td>80</td><td>85</td><td>76</td><td>83</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>72</td><td></td><td>0</td><td>33</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>3</td><td>Jan Zacha(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>41</td><td>25</td><td>62</td><td>72</td><td>60</td><td>60</td><td>50</td><td>74</td><td>70</td><td>80</td><td>72</td><td>79</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>66</td><td></td><td>0</td><td>11</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>4</td><td>Piotr Czerkawski(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>78</td><td>37</td><td>68</td><td>90</td><td>90</td><td>90</td><td>50</td><td>99</td><td>90</td><td>99</td><td>90</td><td>99</td><td>46</td><td>80</td><td>50</td><td>80</td><td>40</td><td>82</td><td></td><td>0</td><td>19</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>5</td><td>David Kastrba(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>77</td><td>25</td><td>62</td><td>90</td><td>90</td><td>70</td><td>50</td><td>97</td><td>40</td><td>92</td><td>82</td><td>90</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>78</td><td></td><td>0</td><td>17</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>6</td><td>Alexander Zajac(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>47</td><td>25</td><td>70</td><td>90</td><td>84</td><td>80</td><td>50</td><td>95</td><td>90</td><td>90</td><td>80</td><td>90</td><td>50</td><td>80</td><td>50</td><td>80</td><td>40</td><td>77</td><td></td><td>0</td><td>24</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>7</td><td>Przemyslaw Brzeszczyczkiewicz(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>56</td><td>25</td><td>62</td><td>80</td><td>50</td><td>80</td><td>50</td><td>80</td><td>43</td><td>78</td><td>90</td><td>90</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>72</td><td></td><td>0</td><td>13</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>8</td><td>Josef Kubinec(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>27</td><td>62</td><td>85</td><td>72</td><td>70</td><td>50</td><td>84</td><td>40</td><td>80</td><td>90</td><td>85</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>72</td><td></td><td>0</td><td>13</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>9</td><td>Vratislav Zbynek(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>43</td><td>25</td><td>62</td><td>81</td><td>80</td><td>77</td><td>50</td><td>81</td><td>40</td><td>71</td><td>84</td><td>81</td><td>46</td><td>80</td><td>50</td><td>80</td><td>40</td><td>70</td><td></td><td>0</td><td>25</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>10</td><td>Jakub Novak(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>82</td><td>75</td><td>72</td><td>50</td><td>50</td><td>82</td><td>80</td><td>77</td><td>86</td><td>93</td><td>80</td><td>50</td><td>80</td><td>40</td><td>68</td><td></td><td>0</td><td>15</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>11</td><td>Simothy Drunkebird(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>60</td><td>25</td><td>62</td><td>60</td><td>60</td><td>40</td><td>50</td><td>60</td><td>70</td><td>50</td><td>40</td><td>70</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>54</td><td></td><td>0</td><td>7</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>12</td><td>Charlie Schieck(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>60</td><td>25</td><td>80</td><td>90</td><td>90</td><td>90</td><td>50</td><td>99</td><td>40</td><td>99</td><td>90</td><td>99</td><td>60</td><td>80</td><td>50</td><td>80</td><td>40</td><td>80</td><td></td><td>0</td><td>18</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>13</td><td>Samee Iqbal(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>52</td><td>48</td><td>62</td><td>87</td><td>85</td><td>85</td><td>50</td><td>86</td><td>50</td><td>93</td><td>85</td><td>95</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>76</td><td></td><td>0</td><td>27</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>14</td><td>Jakub Trocheck(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>89</td><td>69</td><td>73</td><td>50</td><td>83</td><td>40</td><td>75</td><td>85</td><td>90</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>71</td><td></td><td>0</td><td>26</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>15</td><td>Matej Elias(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>41</td><td>25</td><td>62</td><td>84</td><td>65</td><td>75</td><td>50</td><td>81</td><td>40</td><td>70</td><td>80</td><td>86</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>69</td><td></td><td>0</td><td>19</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>16</td><td>Mikas Bieksa(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>41</td><td>25</td><td>62</td><td>75</td><td>60</td><td>64</td><td>50</td><td>70</td><td>40</td><td>70</td><td>80</td><td>80</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>65</td><td></td><td>0</td><td>11</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>17</td><td>Tauras Karazija(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>41</td><td>25</td><td>62</td><td>72</td><td>60</td><td>70</td><td>50</td><td>73</td><td>40</td><td>70</td><td>77</td><td>80</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>65</td><td></td><td>0</td><td>16</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>18</td><td>Flash Gordon(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>60</td><td>25</td><td>70</td><td>70</td><td>65</td><td>70</td><td>50</td><td>76</td><td>40</td><td>50</td><td>40</td><td>80</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>64</td><td></td><td>0</td><td>9</td><td>1</td><td>$0</td><td></td></tr>
+</table><table class="basictablesorter STHSRoster_GoaliesTable"><thead><tr>
+<th class="STHSW200">Goalie Name</th><th class="STHSW25">PO</th><th class="STHSW25">CON</th><th class="STHSW25">IJ</th><th class="STHSW25">SK</th><th class="STHSW25">DU</th><th class="STHSW25">EN</th><th class="STHSW25">SZ</th><th class="STHSW25">AG</th><th class="STHSW25">RB</th><th class="STHSW25">SC</th><th class="STHSW25">HS</th><th class="STHSW25">RT</th><th class="STHSW25">PH</th><th class="STHSW25">PS</th><th class="STHSW25">EX</th><th class="STHSW25">LD</th><th class="STHSW25">PO</th><th class="STHSW25">MO</th><th class="STHSW25">OV</th><th class="STHSW25">TA</th><th class="STHSW25">SP</th><th class="STHSW25">Age</th><th class="STHSW35">Contract</th><th class="STHSW100">Salary</th><th class="STHSW55">Link</th></tr></thead>
+<tr><td>Mike Verminski(R)</td><td>G</td><td>100.00</td><td></td><td>80</td><td>90</td><td>50</td><td>86</td><td>87</td><td>92</td><td>50</td><td>91</td><td>92</td><td>92</td><td>80</td><td>50</td><td>80</td><td>50</td><td>40</td><td>78</td><td></td><td>0</td><td>49</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>Casimir Stevens(R)</td><td>G</td><td>100.00</td><td></td><td>70</td><td>50</td><td>73</td><td>70</td><td>70</td><td>80</td><td>50</td><td>86</td><td>85</td><td>85</td><td>54</td><td>50</td><td>80</td><td>50</td><td>40</td><td>70</td><td></td><td>0</td><td>13</td><td>1</td><td>$0</td><td></td></tr>
+</table>
+</div>
+<h1 class="TeamRosterPro_MOR"><a id="HCEaglesMoravia">HC Eagles Moravia</a></h1>
+<div class="STHSTeamLink">
+[ <a href="CELH-PLF-ProTeamRoster.html#HCEaglesMoravia">Pro Team Roster</a> ]
+[ <a href="CELH-PLF-ProTeamScoring.html#HCEaglesMoravia">Pro Team Scoring</a> ]
+[ <a href="CELH-PLF-ProTeamPlayersInfo.html#HCEaglesMoravia">Pro Team PlayersInfo</a> ]
+[ <a href="CELH-PLF-ProTeamLines.html#HCEaglesMoravia">Pro Team Lines</a> ]
+[ <a href="CELH-PLF-TeamProspects.html#HCEaglesMoravia">Team Prospects</a> ]
+[ <a href="CELH-PLF-ProTeamSchedule.html#HCEaglesMoravia">Pro Team Schedule</a> ]
+[ <a href="CELH-PLF-ProTeamStats.html#HCEaglesMoravia">Pro Team Stats</a> ]
+[ <a href="CELH-PLF-ProTeamStatsVS.html#HCEaglesMoravia">Pro Team Stats VS</a> ]
+[ <a href="CELH-PLF-TeamInjurySuspension.html#HCEaglesMoravia">Team Injury Suspension</a> ]
+[ <a href="CELH-PLF-TeamHistory.html#HCEaglesMoravia">Team History</a> ]
+[ <a href="CELH-PLF-TeamRecords.html#HCEaglesMoravia">Team Records</a> ]
+ [ <a href="#STHSRosterTop"><b>Page Top</b></a> ]
+[ <a href="javascript:STHS_JS_ToggleTeam('STHS_JS_Team_HCEaglesMoravia');"><b>Close / Open Team View</b></a> ]
+</div><div id="STHS_JS_Team_HCEaglesMoravia" style="display: block;">
+<br /><table class="STHSTableFullW"><tr>
+<td class="STHSRoster_GM">General Manager : </td>
+<td class="STHSRoster_Coach">Coach : </td>
+<td class="STHSW120"><b>Morale</b> : 40</td>
+<td class="STHSRoster_TeamOverall">Team Overall : 72</td></tr></table>
+<table class="basictablesorter STHSRoster_PlayersTable"><thead><tr>
+<th class="STHSW25">#</th><th class="STHSW200">Player Name</th><th class="STHSW10">C</th><th class="STHSW10">L</th><th class="STHSW10">R</th><th class="STHSW10">D</th><th class="STHSW25">CON</th><th class="STHSW25">IJ</th><th class="STHSW25">CK</th><th class="STHSW25">FG</th><th class="STHSW25">DI</th><th class="STHSW25">SK</th><th class="STHSW25">ST</th><th class="STHSW25">EN</th><th class="STHSW25">DU</th><th class="STHSW25">PH</th><th class="STHSW25">FO</th><th class="STHSW25">PA</th><th class="STHSW25">SC</th><th class="STHSW25">DF</th><th class="STHSW25">PS</th><th class="STHSW25">EX</th><th class="STHSW25">LD</th><th class="STHSW25">PO</th><th class="STHSW25">MO</th><th class="STHSW25">OV</th><th class="STHSW25">TA</th><th class="STHSW25">SP</th><th class="STHSW25">Age</th><th class="STHSW25">Contract</th><th class="STHSW100">Salary</th><th class="STHSW55">Link</th></tr></thead>
+<tr><td>1</td><td>Slappy McDoodle(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>89</td><td>28</td><td>70</td><td>85</td><td>99</td><td>85</td><td>50</td><td>90</td><td>90</td><td>90</td><td>77</td><td>99</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>79</td><td></td><td>0</td><td>36</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>2</td><td>Aviad Ratzon(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>70</td><td>25</td><td>70</td><td>80</td><td>85</td><td>85</td><td>50</td><td>83</td><td>61</td><td>85</td><td>94</td><td>85</td><td>50</td><td>80</td><td>50</td><td>80</td><td>40</td><td>76</td><td></td><td>0</td><td>40</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>3</td><td>Marian Potoczny(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>43</td><td>25</td><td>62</td><td>91</td><td>88</td><td>92</td><td>50</td><td>88</td><td>88</td><td>91</td><td>81</td><td>87</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>76</td><td></td><td>0</td><td>46</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>4</td><td>Zivan Zidek(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>29</td><td>62</td><td>80</td><td>67</td><td>66</td><td>50</td><td>81</td><td>74</td><td>85</td><td>71</td><td>86</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>70</td><td></td><td>0</td><td>14</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>5</td><td>Potato Chips(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>77</td><td>61</td><td>65</td><td>50</td><td>70</td><td>70</td><td>79</td><td>73</td><td>70</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>65</td><td></td><td>0</td><td>34</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>6</td><td>Mikhail Kladno(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>64</td><td>25</td><td>62</td><td>65</td><td>66</td><td>58</td><td>50</td><td>65</td><td>64</td><td>71</td><td>44</td><td>71</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>60</td><td></td><td>0</td><td>45</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>7</td><td>Dionyz Vyskoc(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>88</td><td>71</td><td>83</td><td>50</td><td>95</td><td>40</td><td>99</td><td>99</td><td>90</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>79</td><td></td><td>0</td><td>24</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>8</td><td>Boruvka Banananak(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>44</td><td>28</td><td>62</td><td>85</td><td>70</td><td>79</td><td>50</td><td>80</td><td>43</td><td>80</td><td>94</td><td>95</td><td>43</td><td>80</td><td>50</td><td>80</td><td>40</td><td>74</td><td></td><td>0</td><td>12</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>9</td><td>Nico Gross(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>76</td><td>25</td><td>62</td><td>85</td><td>80</td><td>80</td><td>50</td><td>85</td><td>40</td><td>90</td><td>60</td><td>89</td><td>46</td><td>80</td><td>50</td><td>80</td><td>40</td><td>73</td><td></td><td>0</td><td>22</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>10</td><td>Marek Vyskoc(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>82</td><td>70</td><td>86</td><td>50</td><td>80</td><td>74</td><td>70</td><td>88</td><td>50</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>67</td><td></td><td>0</td><td>41</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>11</td><td>Sasha Dangelchek(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>61</td><td>25</td><td>69</td><td>76</td><td>52</td><td>48</td><td>50</td><td>70</td><td>40</td><td>72</td><td>55</td><td>73</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>62</td><td></td><td>0</td><td>10</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>12</td><td>Daniel Garland(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>47</td><td>25</td><td>62</td><td>70</td><td>51</td><td>68</td><td>50</td><td>68</td><td>40</td><td>60</td><td>70</td><td>67</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>61</td><td></td><td>0</td><td>20</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>13</td><td>Brady McIntyre(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>77</td><td>25</td><td>62</td><td>90</td><td>90</td><td>90</td><td>50</td><td>99</td><td>90</td><td>99</td><td>90</td><td>99</td><td>90</td><td>80</td><td>50</td><td>80</td><td>40</td><td>81</td><td></td><td>0</td><td>21</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>14</td><td>Sachimo Zoidberg(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>82</td><td>25</td><td>62</td><td>93</td><td>90</td><td>90</td><td>50</td><td>85</td><td>40</td><td>90</td><td>40</td><td>99</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>78</td><td></td><td>0</td><td>40</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>15</td><td>Andrej Doskocil(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>71</td><td>29</td><td>70</td><td>90</td><td>76</td><td>65</td><td>50</td><td>90</td><td>40</td><td>81</td><td>65</td><td>99</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>75</td><td></td><td>0</td><td>14</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>16</td><td>Ondrej Ravchitikov(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>40</td><td>25</td><td>71</td><td>91</td><td>81</td><td>70</td><td>50</td><td>87</td><td>40</td><td>91</td><td>91</td><td>85</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>74</td><td></td><td>0</td><td>46</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>17</td><td>Ty Justice(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>83</td><td>61</td><td>70</td><td>88</td><td>80</td><td>83</td><td>50</td><td>70</td><td>40</td><td>93</td><td>78</td><td>85</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>74</td><td></td><td>0</td><td>30</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>18</td><td>Barak Obrana(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>70</td><td>25</td><td>62</td><td>80</td><td>70</td><td>75</td><td>50</td><td>70</td><td>40</td><td>77</td><td>56</td><td>92</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>71</td><td></td><td>0</td><td>31</td><td>1</td><td>$0</td><td></td></tr>
+</table><table class="basictablesorter STHSRoster_GoaliesTable"><thead><tr>
+<th class="STHSW200">Goalie Name</th><th class="STHSW25">PO</th><th class="STHSW25">CON</th><th class="STHSW25">IJ</th><th class="STHSW25">SK</th><th class="STHSW25">DU</th><th class="STHSW25">EN</th><th class="STHSW25">SZ</th><th class="STHSW25">AG</th><th class="STHSW25">RB</th><th class="STHSW25">SC</th><th class="STHSW25">HS</th><th class="STHSW25">RT</th><th class="STHSW25">PH</th><th class="STHSW25">PS</th><th class="STHSW25">EX</th><th class="STHSW25">LD</th><th class="STHSW25">PO</th><th class="STHSW25">MO</th><th class="STHSW25">OV</th><th class="STHSW25">TA</th><th class="STHSW25">SP</th><th class="STHSW25">Age</th><th class="STHSW35">Contract</th><th class="STHSW100">Salary</th><th class="STHSW55">Link</th></tr></thead>
+<tr><td>Christoffer Bjornsson(R)</td><td>G</td><td>100.00</td><td></td><td>90</td><td>50</td><td>90</td><td>95</td><td>95</td><td>95</td><td>50</td><td>99</td><td>99</td><td>99</td><td>86</td><td>60</td><td>80</td><td>50</td><td>40</td><td>82</td><td></td><td>0</td><td>34</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>Ben Holtby(R)</td><td>G</td><td>100.00</td><td></td><td>50</td><td>50</td><td>69</td><td>70</td><td>70</td><td>88</td><td>50</td><td>80</td><td>89</td><td>89</td><td>50</td><td>50</td><td>80</td><td>50</td><td>40</td><td>69</td><td></td><td>0</td><td>23</td><td>1</td><td>$0</td><td></td></tr>
+</table>
+</div>
+<h1 class="TeamRosterPro_BOH"><a id="HCLionsBohemia">HC Lions Bohemia</a></h1>
+<div class="STHSTeamLink">
+[ <a href="CELH-PLF-ProTeamRoster.html#HCLionsBohemia">Pro Team Roster</a> ]
+[ <a href="CELH-PLF-ProTeamScoring.html#HCLionsBohemia">Pro Team Scoring</a> ]
+[ <a href="CELH-PLF-ProTeamPlayersInfo.html#HCLionsBohemia">Pro Team PlayersInfo</a> ]
+[ <a href="CELH-PLF-ProTeamLines.html#HCLionsBohemia">Pro Team Lines</a> ]
+[ <a href="CELH-PLF-TeamProspects.html#HCLionsBohemia">Team Prospects</a> ]
+[ <a href="CELH-PLF-ProTeamSchedule.html#HCLionsBohemia">Pro Team Schedule</a> ]
+[ <a href="CELH-PLF-ProTeamStats.html#HCLionsBohemia">Pro Team Stats</a> ]
+[ <a href="CELH-PLF-ProTeamStatsVS.html#HCLionsBohemia">Pro Team Stats VS</a> ]
+[ <a href="CELH-PLF-TeamInjurySuspension.html#HCLionsBohemia">Team Injury Suspension</a> ]
+[ <a href="CELH-PLF-TeamHistory.html#HCLionsBohemia">Team History</a> ]
+[ <a href="CELH-PLF-TeamRecords.html#HCLionsBohemia">Team Records</a> ]
+ [ <a href="#STHSRosterTop"><b>Page Top</b></a> ]
+[ <a href="javascript:STHS_JS_ToggleTeam('STHS_JS_Team_HCLionsBohemia');"><b>Close / Open Team View</b></a> ]
+</div><div id="STHS_JS_Team_HCLionsBohemia" style="display: block;">
+<br /><table class="STHSTableFullW"><tr>
+<td class="STHSRoster_GM">General Manager : </td>
+<td class="STHSRoster_Coach">Coach : </td>
+<td class="STHSW120"><b>Morale</b> : 40</td>
+<td class="STHSRoster_TeamOverall">Team Overall : 73</td></tr></table>
+<table class="basictablesorter STHSRoster_PlayersTable"><thead><tr>
+<th class="STHSW25">#</th><th class="STHSW200">Player Name</th><th class="STHSW10">C</th><th class="STHSW10">L</th><th class="STHSW10">R</th><th class="STHSW10">D</th><th class="STHSW25">CON</th><th class="STHSW25">IJ</th><th class="STHSW25">CK</th><th class="STHSW25">FG</th><th class="STHSW25">DI</th><th class="STHSW25">SK</th><th class="STHSW25">ST</th><th class="STHSW25">EN</th><th class="STHSW25">DU</th><th class="STHSW25">PH</th><th class="STHSW25">FO</th><th class="STHSW25">PA</th><th class="STHSW25">SC</th><th class="STHSW25">DF</th><th class="STHSW25">PS</th><th class="STHSW25">EX</th><th class="STHSW25">LD</th><th class="STHSW25">PO</th><th class="STHSW25">MO</th><th class="STHSW25">OV</th><th class="STHSW25">TA</th><th class="STHSW25">SP</th><th class="STHSW25">Age</th><th class="STHSW25">Contract</th><th class="STHSW100">Salary</th><th class="STHSW55">Link</th></tr></thead>
+<tr><td>1</td><td>DeMaricus Smyth(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>74</td><td>36</td><td>70</td><td>90</td><td>90</td><td>90</td><td>50</td><td>99</td><td>90</td><td>90</td><td>99</td><td>99</td><td>71</td><td>80</td><td>50</td><td>80</td><td>40</td><td>82</td><td></td><td>0</td><td>21</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>2</td><td>Dickie Pecker(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>92</td><td>80</td><td>80</td><td>80</td><td>50</td><td>85</td><td>68</td><td>85</td><td>80</td><td>88</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>73</td><td></td><td>0</td><td>33</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>3</td><td>Travis Jeziak(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>66</td><td>25</td><td>62</td><td>84</td><td>79</td><td>82</td><td>50</td><td>84</td><td>85</td><td>87</td><td>62</td><td>89</td><td>41</td><td>80</td><td>50</td><td>80</td><td>40</td><td>72</td><td></td><td>0</td><td>29</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>4</td><td>Soren Kierkegaard(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>83</td><td>60</td><td>60</td><td>50</td><td>80</td><td>51</td><td>88</td><td>78</td><td>85</td><td>43</td><td>80</td><td>50</td><td>80</td><td>40</td><td>70</td><td></td><td>0</td><td>17</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>5</td><td>Petr Kolesnikovs(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>75</td><td>75</td><td>70</td><td>50</td><td>78</td><td>70</td><td>82</td><td>72</td><td>70</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>67</td><td></td><td>0</td><td>34</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>6</td><td>Konstantin Voloshin(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>71</td><td>59</td><td>55</td><td>50</td><td>71</td><td>60</td><td>70</td><td>81</td><td>80</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>65</td><td></td><td>0</td><td>14</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>7</td><td>Luke Thomason(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>70</td><td>25</td><td>82</td><td>90</td><td>87</td><td>80</td><td>50</td><td>99</td><td>90</td><td>89</td><td>99</td><td>99</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>81</td><td></td><td>0</td><td>17</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>8</td><td>Cameron Urbowicz(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>64</td><td>90</td><td>90</td><td>90</td><td>50</td><td>90</td><td>40</td><td>92</td><td>70</td><td>90</td><td>42</td><td>80</td><td>50</td><td>80</td><td>40</td><td>75</td><td></td><td>0</td><td>38</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>9</td><td>Petr Mikulak(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>48</td><td>25</td><td>62</td><td>90</td><td>73</td><td>70</td><td>50</td><td>90</td><td>50</td><td>77</td><td>87</td><td>90</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>74</td><td></td><td>0</td><td>13</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>10</td><td>Matej Stransky(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>58</td><td>25</td><td>62</td><td>81</td><td>72</td><td>81</td><td>50</td><td>80</td><td>50</td><td>70</td><td>91</td><td>70</td><td>50</td><td>80</td><td>50</td><td>80</td><td>40</td><td>70</td><td></td><td>0</td><td>42</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>11</td><td>Aron Hernadivic(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>75</td><td>65</td><td>62</td><td>50</td><td>72</td><td>40</td><td>77</td><td>70</td><td>80</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>65</td><td></td><td>0</td><td>9</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>12</td><td>Ruslan Zaporozhets(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>41</td><td>25</td><td>62</td><td>69</td><td>61</td><td>64</td><td>50</td><td>65</td><td>41</td><td>63</td><td>75</td><td>70</td><td>44</td><td>80</td><td>50</td><td>80</td><td>40</td><td>62</td><td></td><td>0</td><td>9</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>13</td><td>Pierre-Luc Laflamme(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>74</td><td>25</td><td>69</td><td>99</td><td>90</td><td>90</td><td>50</td><td>99</td><td>60</td><td>90</td><td>99</td><td>90</td><td>70</td><td>80</td><td>50</td><td>80</td><td>40</td><td>81</td><td></td><td>0</td><td>38</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>14</td><td>Sean Stevenson Jr.(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>60</td><td>28</td><td>70</td><td>90</td><td>80</td><td>80</td><td>50</td><td>90</td><td>40</td><td>90</td><td>73</td><td>99</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>77</td><td></td><td>0</td><td>17</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>15</td><td>Walter White(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>81</td><td>25</td><td>70</td><td>87</td><td>81</td><td>82</td><td>50</td><td>87</td><td>42</td><td>87</td><td>63</td><td>91</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>76</td><td></td><td>0</td><td>43</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>16</td><td>Bernik Vrzala(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>82</td><td>25</td><td>62</td><td>85</td><td>75</td><td>80</td><td>50</td><td>80</td><td>40</td><td>82</td><td>43</td><td>99</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>75</td><td></td><td>0</td><td>13</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>17</td><td>Tokek Takshak(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>86</td><td>74</td><td>71</td><td>50</td><td>90</td><td>40</td><td>82</td><td>93</td><td>99</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>74</td><td></td><td>0</td><td>17</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>18</td><td>David Vent(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>60</td><td>60</td><td>69</td><td>90</td><td>80</td><td>56</td><td>50</td><td>90</td><td>40</td><td>80</td><td>65</td><td>90</td><td>42</td><td>80</td><td>50</td><td>80</td><td>40</td><td>72</td><td></td><td>0</td><td>14</td><td>1</td><td>$0</td><td></td></tr>
+</table><table class="basictablesorter STHSRoster_GoaliesTable"><thead><tr>
+<th class="STHSW200">Goalie Name</th><th class="STHSW25">PO</th><th class="STHSW25">CON</th><th class="STHSW25">IJ</th><th class="STHSW25">SK</th><th class="STHSW25">DU</th><th class="STHSW25">EN</th><th class="STHSW25">SZ</th><th class="STHSW25">AG</th><th class="STHSW25">RB</th><th class="STHSW25">SC</th><th class="STHSW25">HS</th><th class="STHSW25">RT</th><th class="STHSW25">PH</th><th class="STHSW25">PS</th><th class="STHSW25">EX</th><th class="STHSW25">LD</th><th class="STHSW25">PO</th><th class="STHSW25">MO</th><th class="STHSW25">OV</th><th class="STHSW25">TA</th><th class="STHSW25">SP</th><th class="STHSW25">Age</th><th class="STHSW35">Contract</th><th class="STHSW100">Salary</th><th class="STHSW55">Link</th></tr></thead>
+<tr><td>Chris Partridge(R)</td><td>G</td><td>100.00</td><td></td><td>90</td><td>50</td><td>95</td><td>95</td><td>90</td><td>99</td><td>50</td><td>99</td><td>95</td><td>99</td><td>80</td><td>80</td><td>50</td><td>80</td><td>40</td><td>81</td><td></td><td>0</td><td>21</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>Johnny Yuma(R)</td><td>G</td><td>100.00</td><td></td><td>75</td><td>50</td><td>77</td><td>89</td><td>89</td><td>88</td><td>50</td><td>87</td><td>87</td><td>88</td><td>70</td><td>51</td><td>80</td><td>50</td><td>40</td><td>75</td><td></td><td>0</td><td>22</td><td>1</td><td>$0</td><td></td></tr>
+</table>
+</div>
+<h1 class="TeamRosterPro_KLD"><a id="HCLynxKladno">HC Lynx Kladno</a></h1>
+<div class="STHSTeamLink">
+[ <a href="CELH-PLF-ProTeamRoster.html#HCLynxKladno">Pro Team Roster</a> ]
+[ <a href="CELH-PLF-ProTeamScoring.html#HCLynxKladno">Pro Team Scoring</a> ]
+[ <a href="CELH-PLF-ProTeamPlayersInfo.html#HCLynxKladno">Pro Team PlayersInfo</a> ]
+[ <a href="CELH-PLF-ProTeamLines.html#HCLynxKladno">Pro Team Lines</a> ]
+[ <a href="CELH-PLF-TeamProspects.html#HCLynxKladno">Team Prospects</a> ]
+[ <a href="CELH-PLF-ProTeamSchedule.html#HCLynxKladno">Pro Team Schedule</a> ]
+[ <a href="CELH-PLF-ProTeamStats.html#HCLynxKladno">Pro Team Stats</a> ]
+[ <a href="CELH-PLF-ProTeamStatsVS.html#HCLynxKladno">Pro Team Stats VS</a> ]
+[ <a href="CELH-PLF-TeamInjurySuspension.html#HCLynxKladno">Team Injury Suspension</a> ]
+[ <a href="CELH-PLF-TeamHistory.html#HCLynxKladno">Team History</a> ]
+[ <a href="CELH-PLF-TeamRecords.html#HCLynxKladno">Team Records</a> ]
+ [ <a href="#STHSRosterTop"><b>Page Top</b></a> ]
+[ <a href="javascript:STHS_JS_ToggleTeam('STHS_JS_Team_HCLynxKladno');"><b>Close / Open Team View</b></a> ]
+</div><div id="STHS_JS_Team_HCLynxKladno" style="display: block;">
+<br /><table class="STHSTableFullW"><tr>
+<td class="STHSRoster_GM">General Manager : </td>
+<td class="STHSRoster_Coach">Coach : </td>
+<td class="STHSW120"><b>Morale</b> : 40</td>
+<td class="STHSRoster_TeamOverall">Team Overall : 72</td></tr></table>
+<table class="basictablesorter STHSRoster_PlayersTable"><thead><tr>
+<th class="STHSW25">#</th><th class="STHSW200">Player Name</th><th class="STHSW10">C</th><th class="STHSW10">L</th><th class="STHSW10">R</th><th class="STHSW10">D</th><th class="STHSW25">CON</th><th class="STHSW25">IJ</th><th class="STHSW25">CK</th><th class="STHSW25">FG</th><th class="STHSW25">DI</th><th class="STHSW25">SK</th><th class="STHSW25">ST</th><th class="STHSW25">EN</th><th class="STHSW25">DU</th><th class="STHSW25">PH</th><th class="STHSW25">FO</th><th class="STHSW25">PA</th><th class="STHSW25">SC</th><th class="STHSW25">DF</th><th class="STHSW25">PS</th><th class="STHSW25">EX</th><th class="STHSW25">LD</th><th class="STHSW25">PO</th><th class="STHSW25">MO</th><th class="STHSW25">OV</th><th class="STHSW25">TA</th><th class="STHSW25">SP</th><th class="STHSW25">Age</th><th class="STHSW25">Contract</th><th class="STHSW100">Salary</th><th class="STHSW55">Link</th></tr></thead>
+<tr><td>1</td><td>Schnitinfritz Jagr(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>90</td><td>90</td><td>85</td><td>50</td><td>87</td><td>99</td><td>95</td><td>85</td><td>99</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>78</td><td></td><td>0</td><td>37</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>2</td><td>Michael Scarn(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>46</td><td>25</td><td>62</td><td>91</td><td>81</td><td>80</td><td>50</td><td>90</td><td>80</td><td>87</td><td>96</td><td>90</td><td>48</td><td>80</td><td>50</td><td>80</td><td>40</td><td>78</td><td></td><td>0</td><td>14</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>3</td><td>Shouta Aizawa(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>52</td><td>25</td><td>62</td><td>80</td><td>62</td><td>73</td><td>50</td><td>78</td><td>80</td><td>76</td><td>90</td><td>85</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>71</td><td></td><td>0</td><td>16</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>4</td><td>Patrik Satan(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>77</td><td>82</td><td>71</td><td>50</td><td>80</td><td>73</td><td>70</td><td>87</td><td>87</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>70</td><td></td><td>0</td><td>39</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>5</td><td>Grayson St. Raegan(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>41</td><td>25</td><td>62</td><td>65</td><td>65</td><td>69</td><td>50</td><td>70</td><td>65</td><td>80</td><td>70</td><td>75</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>65</td><td></td><td>0</td><td>20</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>6</td><td>Josef Novotny(R)</td><td>X</td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>41</td><td>25</td><td>62</td><td>65</td><td>61</td><td>55</td><td>50</td><td>66</td><td>71</td><td>70</td><td>78</td><td>80</td><td>43</td><td>80</td><td>50</td><td>80</td><td>40</td><td>64</td><td></td><td>0</td><td>12</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>7</td><td>Alex Winters(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>45</td><td>25</td><td>67</td><td>90</td><td>90</td><td>76</td><td>50</td><td>99</td><td>76</td><td>99</td><td>90</td><td>99</td><td>67</td><td>80</td><td>50</td><td>80</td><td>40</td><td>80</td><td></td><td>0</td><td>17</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>8</td><td>Filip Zadina(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>87</td><td>83</td><td>75</td><td>50</td><td>84</td><td>40</td><td>83</td><td>93</td><td>90</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>74</td><td></td><td>0</td><td>13</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>9</td><td>Cash Savage(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>50</td><td>34</td><td>62</td><td>76</td><td>70</td><td>70</td><td>50</td><td>75</td><td>49</td><td>70</td><td>90</td><td>90</td><td>47</td><td>80</td><td>50</td><td>80</td><td>40</td><td>70</td><td></td><td>0</td><td>19</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>10</td><td>Merit Csonka(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>41</td><td>25</td><td>65</td><td>81</td><td>73</td><td>73</td><td>50</td><td>73</td><td>45</td><td>72</td><td>81</td><td>73</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>68</td><td></td><td>0</td><td>40</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>11</td><td>Ravyn Tedisko(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>60</td><td>27</td><td>64</td><td>75</td><td>55</td><td>65</td><td>50</td><td>75</td><td>43</td><td>70</td><td>80</td><td>82</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>67</td><td></td><td>0</td><td>11</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>12</td><td>Radovan Hudec(R)</td><td></td><td>X</td><td>X</td><td></td><td>100.00</td><td></td><td>41</td><td>25</td><td>62</td><td>80</td><td>66</td><td>70</td><td>50</td><td>70</td><td>40</td><td>70</td><td>76</td><td>73</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>66</td><td></td><td>0</td><td>20</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>13</td><td>Troy McClure III(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>80</td><td>31</td><td>62</td><td>90</td><td>89</td><td>90</td><td>50</td><td>98</td><td>46</td><td>91</td><td>76</td><td>99</td><td>46</td><td>80</td><td>50</td><td>80</td><td>40</td><td>80</td><td></td><td>0</td><td>17</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>14</td><td>Barret McCarthy(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>60</td><td>25</td><td>63</td><td>99</td><td>87</td><td>75</td><td>50</td><td>90</td><td>40</td><td>99</td><td>87</td><td>99</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>79</td><td></td><td>0</td><td>15</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>15</td><td>Noctis Caelum(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>56</td><td>28</td><td>62</td><td>90</td><td>85</td><td>87</td><td>50</td><td>90</td><td>46</td><td>96</td><td>86</td><td>99</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>78</td><td></td><td>0</td><td>28</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>16</td><td>Kornel Kasparek(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>86</td><td>25</td><td>62</td><td>89</td><td>47</td><td>76</td><td>50</td><td>87</td><td>40</td><td>75</td><td>70</td><td>91</td><td>53</td><td>80</td><td>50</td><td>80</td><td>40</td><td>73</td><td></td><td>0</td><td>29</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>17</td><td>Tomas Pylon(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>40</td><td>25</td><td>62</td><td>90</td><td>75</td><td>85</td><td>50</td><td>76</td><td>40</td><td>90</td><td>70</td><td>82</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>71</td><td></td><td>0</td><td>39</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>18</td><td>Jakob Hamr(R)</td><td></td><td></td><td></td><td>X</td><td>100.00</td><td></td><td>55</td><td>33</td><td>62</td><td>70</td><td>50</td><td>58</td><td>50</td><td>79</td><td>40</td><td>70</td><td>50</td><td>80</td><td>40</td><td>80</td><td>50</td><td>80</td><td>40</td><td>63</td><td></td><td>0</td><td>10</td><td>1</td><td>$0</td><td></td></tr>
+</table><table class="basictablesorter STHSRoster_GoaliesTable"><thead><tr>
+<th class="STHSW200">Goalie Name</th><th class="STHSW25">PO</th><th class="STHSW25">CON</th><th class="STHSW25">IJ</th><th class="STHSW25">SK</th><th class="STHSW25">DU</th><th class="STHSW25">EN</th><th class="STHSW25">SZ</th><th class="STHSW25">AG</th><th class="STHSW25">RB</th><th class="STHSW25">SC</th><th class="STHSW25">HS</th><th class="STHSW25">RT</th><th class="STHSW25">PH</th><th class="STHSW25">PS</th><th class="STHSW25">EX</th><th class="STHSW25">LD</th><th class="STHSW25">PO</th><th class="STHSW25">MO</th><th class="STHSW25">OV</th><th class="STHSW25">TA</th><th class="STHSW25">SP</th><th class="STHSW25">Age</th><th class="STHSW35">Contract</th><th class="STHSW100">Salary</th><th class="STHSW55">Link</th></tr></thead>
+<tr><td>Georgette Pel(R)</td><td>G</td><td>100.00</td><td></td><td>90</td><td>50</td><td>99</td><td>90</td><td>95</td><td>95</td><td>50</td><td>99</td><td>95</td><td>99</td><td>83</td><td>50</td><td>80</td><td>50</td><td>40</td><td>81</td><td></td><td>0</td><td>28</td><td>1</td><td>$0</td><td></td></tr>
+<tr><td>Knox Booth(R)</td><td>G</td><td>100.00</td><td></td><td>73</td><td>50</td><td>50</td><td>90</td><td>90</td><td>82</td><td>50</td><td>50</td><td>90</td><td>90</td><td>70</td><td>60</td><td>80</td><td>50</td><td>40</td><td>71</td><td></td><td>0</td><td>10</td><td>1</td><td>$0</td><td></td></tr>
+</table>
+</div>
+<br /><br /><br /><a href="#" class="scrollup">Back to the Top</a><div class="footer">
+Output by the <a href="http://sths.simont.info">SimonT Hockey Simulator (STHS)</a> for Marcus Winston<span class="FooterW3C"> - Original Page <a href="http://validator.w3.org/check?uri=referer">W3C HTML5 Valid</a></span>
+<div style="display:none;visibility:hidden"><a href="http://sths.simont.info">Hockey Simulator</a> - <a href="http://sths.simont.info">Hockey Simulation</a> - <a href="http://sths.simont.info">Hockey Manager</a></div></div>
+</body></html>
